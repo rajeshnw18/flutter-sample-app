@@ -1,32 +1,13 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 
-class TodayBookingReport extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(),
-      
-    );
-  }
-}
-
-
-class MyHomePage extends StatefulWidget {
- 
-
+class ClusterRevenueReport extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-
+class _MyHomePageState extends State<ClusterRevenueReport> {
   TextEditingController editingController = TextEditingController();
-
   final duplicateItems = List<String>.generate(10000, (i) => "Item $i");
   var items = List<String>();
 

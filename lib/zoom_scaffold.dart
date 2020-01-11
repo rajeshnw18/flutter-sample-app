@@ -42,7 +42,7 @@ class _ZoomScaffoldState extends State<ZoomScaffold>
             actions: <Widget>[
               IconButton(
                 onPressed: () {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>MyApp()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>MainApp()));
                 },
                 icon: Icon(
                   Icons.image,
@@ -52,7 +52,7 @@ class _ZoomScaffoldState extends State<ZoomScaffold>
 
               IconButton(
                 onPressed: () {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>MyApp()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>MainApp()));
                 },
                 icon: Icon(
                   Icons.lock,

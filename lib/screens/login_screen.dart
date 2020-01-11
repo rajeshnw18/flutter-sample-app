@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: FlatButton(
         //onPressed: () => print('Forgot Password Button Pressed'),
         onPressed: (){
-          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => ForgotPassword()));
+          Navigator.push(context,MaterialPageRoute(builder: (context) => ForgotPassword()));
           },
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
@@ -157,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
           if(username=="admin@gmail.com" && password=="admin")
           {
             //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>Home()));
-            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Home()));
+            Navigator.push(context,MaterialPageRoute(builder: (context) => Home()));
           }
           else
           {
@@ -190,7 +190,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: FlatButton(
         //onPressed: () => print('Forgot Password Button Pressed'),
         onPressed: (){
-          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Newuser()));
+          Navigator.push(context,MaterialPageRoute(builder: (context) => Newuser()));
           },
         padding: EdgeInsets.only(right: 0.0),
         child: Text(

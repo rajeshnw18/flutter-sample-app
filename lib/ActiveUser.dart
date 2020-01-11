@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class UserDetails extends StatelessWidget {
+class ActiveUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     

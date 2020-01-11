@@ -1,34 +1,13 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 
-class TodayTaskReport extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(),
-      
-    );
-  }
-}
-
-
-class MyHomePage extends StatefulWidget {
- // MyHomePage(Key key) : super(key: key);
-  //final String title;
-
+class RegionRevenueReport extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-
+class _MyHomePageState extends State<RegionRevenueReport> {
   TextEditingController editingController = TextEditingController();
-
   final duplicateItems = List<String>.generate(10000, (i) => "Item $i");
   var items = List<String>();
 
@@ -67,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
       appBar: new AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Today Deal'),
+        title: Text('Today Booking'),
         leading: IconButton(icon:Icon(Icons.arrow_back),
           onPressed:() {
              Navigator.push(context,MaterialPageRoute(builder: (context) => Home()));
@@ -76,8 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
         )
       ),
       body: Container(
+        
         child: Column(
+          
           children: <Widget>[
+            
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
@@ -85,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   filterSearchResults(value);
                 },
                 controller: editingController,
+                
                 decoration: InputDecoration(
                     labelText: "Search",
                     hintText: "Search",
@@ -95,13 +78,28 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Expanded(
               child: ListView.builder(
+                
                 shrinkWrap: true,
                 itemCount: items.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text('${items[index]}'),
-                    subtitle: Text("01-01-2020")
-                    
+                    onTap:()
+                    {
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => DetailPage('${items[index]}')));
+                        
+                    },
+                    title: Text('${items[index]}',
+                    //title: Text( 'CNN/MUM/19/' '${index}',
+                    style: TextStyle(color: Colors.blueGrey),
+                    ),
+                    subtitle: Text("01-01-2020                Rajesh               Approved",
+                    style: TextStyle(color: Colors.red),
+                    ),
+                    leading: Icon(
+                      Icons.library_books,
+                      color: Colors.red,
+                    ),
+                   
                   );
                 },
               ),
@@ -109,6 +107,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class DetailPage extends StatelessWidget {
+  final dealNo="ok";
+  DetailPage(String dealNo);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('DealNo'),
+        )
     );
   }
 }
